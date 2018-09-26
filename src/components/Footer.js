@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { COLORS } from "../constants";
+import React from 'react';
+import styled from 'styled-components';
+import { DESKTOP, COLORS } from '../constants';
 
 const Wrapper = styled.div`
   /* Start fallback for non-supporting-grid browsers */
-  flex-basis: content;
+  flex-basis: 100%;
   align-items: center;
   justify-content: center;
   background-color: ${COLORS.YELLOW};
@@ -13,8 +13,12 @@ const Wrapper = styled.div`
   /* End fallback */
 
   @supports (display: grid) {
-    grid-column: 1/3;
-    grid-row: 3/4;
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+
+    @media ${DESKTOP} {
+      grid-row: 3 / 4;
+    }
   }
 `;
 

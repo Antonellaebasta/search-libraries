@@ -1,34 +1,56 @@
-import React from "react";
-import styled from "styled-components";
-import { COLORS } from "../constants";
+import React from 'react';
+import styled from 'styled-components';
+import { DESKTOP, COLORS } from '../constants';
 //import logo from '../../logo.svg';
 
 const Wrapper = styled.div`
   /* Start fallback for non-supporting-grid browsers */
-  flex-basis: content;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  color: ${COLORS.BROWN};
   background-color: ${COLORS.YELLOW};
-  //border-bottom: 10px ${COLORS.BLUE};
   /* End fallback */
 
   @supports (display: grid) {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 1;
-    text-align: center;
+
+    @media ${DESKTOP} {
+      grid-template-columns: 1 / span 2;
+    }
   }
 `;
 
-const Title = styled.span`
-  color: ${COLORS.BROWN};
+const ContentWrapper = styled.div`
+  margin: auto;
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  @media ${DESKTOP} {
+    font-size: 50px;
+  }
+`;
+
+const SubTitle = styled.h3`
+  font-size: 14px;
+  font-weight: 400;
+
+  @media ${DESKTOP} {
+    font-size: 16px;
+  }
 `;
 
 const Header = () => (
   <Wrapper>
-    <Title>
-      <h1>Modules Search</h1>
-      <h4>Powered by libraries.io</h4>
-    </Title>
+    <ContentWrapper>
+      <Title>Libraries Search</Title>
+      <SubTitle>Powered by libraries.io</SubTitle>
+    </ContentWrapper>
   </Wrapper>
 );
 

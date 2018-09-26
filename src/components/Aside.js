@@ -1,29 +1,34 @@
-import React from "react";
-import styled from "styled-components";
-import { DESKTOP, COLORS } from "../constants";
+import React from 'react';
+import styled from 'styled-components';
+import { DESKTOP, COLORS } from '../constants';
 
 const Wrapper = styled.div`
   /* Start fallback for non-supporting-grid browsers */
-  flex-basis: content;
+  flex-basis: 100%;
   align-items: center;
   justify-content: center;
   color: ${COLORS.PURPLE};
-  text-align: center;
+  padding: 0 10px;
+
+  @media ${DESKTOP} {
+    flex-basis: 30%;
+  }
   /* End fallback */
 
   @supports (display: grid) {
-    grid-column: 1 / span 2;
+    grid-column: 2 / 3;
 
     @media ${DESKTOP} {
-      grid-column: 1/2;
-      grid-row: 2/3;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
     }
   }
 `;
 
 const Aside = () => (
   <Wrapper>
-    <h3>Sponsors (become one):</h3>
+    <h3>Space for the Sponsors</h3>
+    <p>Be the first!</p>
   </Wrapper>
 );
 

@@ -3,15 +3,53 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "husky": "^1.0.0-rc.15",
+    "immutable": "^3.8.2",
+    "lint-staged": "^7.3.0",
+    "lodash": "^4.17.11",
+    "prettier": "^1.14.3",
+    "prop-types": "latest",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "2.0.0",
+    "redux-immutable": "^4.0.0",
+    "redux-promise": "^0.6.0",
+    "redux-saga": "^0.16.0",
     "styled-components": "^3.4.9"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^22.0.4"
+  },
+  "resolutions": {
+    "react-scripts/jest": "23.3.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "setupFiles": [
+      "raf/polyfill"
+    ],
+    "moduleNameMapper": {
+      "\\.(pdf|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
