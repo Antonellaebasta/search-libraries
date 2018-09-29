@@ -5,6 +5,7 @@
   "dependencies": {
     "husky": "^1.0.0-rc.15",
     "immutable": "^3.8.2",
+    "jest-enzyme": "^6.1.2",
     "lint-staged": "^7.3.0",
     "lodash": "^4.17.11",
     "prettier": "^1.14.3",
@@ -43,13 +44,6 @@
   },
   "jest": {
     "verbose": true,
-    "testURL": "http://localhost/",
-    "setupFiles": [
-      "raf/polyfill"
-    ],
-    "moduleNameMapper": {
-      "\\.(pdf|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy"
-    }
+    "testURL": "http://localhost/"
   }
 }

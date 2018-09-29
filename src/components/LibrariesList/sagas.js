@@ -1,4 +1,4 @@
-import { takeLatest, call, put, select, take } from 'redux-saga/effects';
+import { takeLatest, call, put, select } from 'redux-saga/effects';
 import {
   FETCH_LIBRARIES,
   FETCH_LIBRARIES_SUCCESS,

@@ -1,4 +1,4 @@
-import { CURRENT_PAGE, SET_PAGE } from '../components/constants';
+import { SET_PAGE } from '../components/constants';
 
 export const setPage = page => ({
   type: SET_PAGE,
